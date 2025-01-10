@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman {% block judul %} {% endblock %}</title>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/AdminLTE.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='font/sansPro.css') }}">
+    <style>
+        /* Tambahan styling untuk membuat tampilan lebih mirip */
+        .navbar {
+            background-color: #607785;
+            color: #fff;
+        }
+        .navbar a.navbar-brand {
+            color: #fff;
+            font-weight: bold;
+        }
+        .navbar img {
+            width: 40px;
+            margin-right: 10px;
+        }
+        .content-header h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .content-header small {
+            font-size: 16px;
+            color: #666;
+        }
+        .box {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        .box-header {
+            background-color: #f7f7f7;
+            padding: 10px 15px;
+            border-bottom: 1px solid #ddd;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .box-body {
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="{{ url_for('static', filename='img/amikom_logo.png') }}" alt="Logo">
+                Data Mahasiswa
+            </a>
+        </div>
+    </nav>
+
+    <!-- Content Wrapper -->
+    <div class="content-wrapper container mt-4">
+        <!-- Header -->
+        <section class="content-header">
+            <h1>
+                Data Mahasiswa
+                <small>Teknik Komputer</small>
+            </h1>
+        </section>
+
+        <!-- Main Content -->
+        <section class="content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="box">
+                        <div class="box-header">
+                            {% block JudulKonten %}{% endblock %}
+                        </div>
+                        <div class="box-body">
+                            {% block konten %}{% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/adminlte.min.js') }}"></script>
+</body>
+</html>
